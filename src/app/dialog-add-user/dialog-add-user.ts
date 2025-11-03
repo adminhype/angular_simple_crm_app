@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MATERIAL_IMPORTS } from '../shared/materials';
 import { UserClass } from '../models/user.class';
 import { FormsModule } from '@angular/forms';
+import { FirebaseService } from '../services/firebase.service';
 
 
 @Component({
@@ -14,10 +15,12 @@ export class DialogAddUser {
   user = new UserClass();
   birthDate!: Date;
 
-  constructor() {}
+  constructor(private firebaseService: FirebaseService) {}
 
   saveUser() {
     this.user.birthDate = this.birthDate.getTime();
-    console.log('User saved:', this.user);
+    this.firebaseService.addUser(this.user.toJson()).then(() => {
+      console.log('User added successfully');
+    });
   }
 }
