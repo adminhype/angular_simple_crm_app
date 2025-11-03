@@ -1,0 +1,11 @@
+.dialog-add-user {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    input {
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+    }
+}

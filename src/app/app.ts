@@ -1,13 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-
+import { MATERIAL_IMPORTS } from './shared/materials';
 
 @Component({
   selector: 'app-root',
-  imports: [MatToolbarModule, MatSidenavModule, MatIconModule, RouterOutlet, RouterLinkWithHref],
+  imports: [RouterOutlet, RouterLinkWithHref, MATERIAL_IMPORTS],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

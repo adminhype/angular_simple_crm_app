@@ -1,0 +1,40 @@
+
+<div class="dialog-add-user">
+<h2 mat-dialog-title>Add User</h2>
+<div>
+<mat-form-field class="mr-16" appearance="outline">
+  <mat-label>First Name</mat-label>
+  <input matInput>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>Last Name</mat-label>
+  <input matInput>
+</mat-form-field>
+</div>
+
+<div>
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Birth Date</mat-label>
+  <input matInput [matDatepicker]="picker1">
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="mr-16" appearance="outline">
+  <mat-label>Zip code</mat-label>
+  <input matInput>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>City</mat-label>
+  <input matInput>
+</mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button  matButton="outlined" >Cancel</button>
+  <button  matButton="outlined">Save</button>
+</div>
+</div>
