@@ -4,19 +4,19 @@
 <div>
 <mat-form-field class="mr-16" appearance="outline">
   <mat-label>First Name</mat-label>
-  <input matInput>
+  <input matInput [(ngModel)]="user.firstName" placeholder="firstname">
 </mat-form-field>
 
 <mat-form-field appearance="outline">
   <mat-label>Last Name</mat-label>
-  <input matInput>
+  <input matInput [(ngModel)]="user.lastName" placeholder="lastname">
 </mat-form-field>
 </div>
 
 <div>
 <mat-form-field class="full-width" appearance="outline">
   <mat-label>Birth Date</mat-label>
-  <input matInput [matDatepicker]="picker1">
+  <input matInput [matDatepicker]="picker1" [(ngModel)]="birthDate" placeholder="Choose a date">
   <mat-datepicker #picker1></mat-datepicker>
 </mat-form-field>
 </div>
@@ -24,17 +24,17 @@
 <div>
     <mat-form-field class="mr-16" appearance="outline">
   <mat-label>Zip code</mat-label>
-  <input matInput>
+  <input matInput [(ngModel)]="user.zipCode" placeholder="zip code">
 </mat-form-field>
 
 <mat-form-field appearance="outline">
   <mat-label>City</mat-label>
-  <input matInput>
+  <input matInput [(ngModel)]="user.city" placeholder="city">
 </mat-form-field>
 </div>
 
 <div mat-dialog-actions>
   <button  matButton="outlined" >Cancel</button>
-  <button  matButton="outlined">Save</button>
+  <button (click)="saveUser()" matButton="outlined">Save</button>
 </div>
 </div>
