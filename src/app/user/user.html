@@ -2,19 +2,16 @@
         <table class="user-table">
             <tr>
                 <th>Name</th>
-                <th>Email</th>
+                <th>Surname</th>
                 <th>City</th>
             </tr>
+            @for (user of allUsers; track user.id) {
             <tr>
-                <td>John Doe</td>
-                <td>john.doe@example.com</td>
-                <td>New York</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.city }}</td>
             </tr>
-            <tr>
-                <td>sam</td>
-                <td>sam@example.com</td>
-                <td>Los Angeles</td>
-            </tr>
+            }
         </table>
     </mat-card>
         
