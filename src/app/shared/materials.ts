@@ -10,6 +10,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 export const MATERIAL_IMPORTS = [
@@ -24,5 +26,6 @@ export const MATERIAL_IMPORTS = [
   MatNativeDateModule,
   MatTooltipModule,
   MatSelectModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatCardModule
 ];

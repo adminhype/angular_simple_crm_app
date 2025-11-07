@@ -3,6 +3,7 @@ import { MATERIAL_IMPORTS } from '../shared/materials';
 import { UserClass } from '../models/user.class';
 import { FormsModule } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class DialogAddUser {
   birthDate!: Date;
   isLoading = false;
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(private firebaseService: FirebaseService, public dialogRef: MatDialogRef<DialogAddUser>) {}
 
   saveUser() {
     this.user.birthDate = this.birthDate.getTime();
@@ -24,6 +25,7 @@ export class DialogAddUser {
     this.firebaseService.addUser(this.user.toJson()).then(() => {
       console.log('User added successfully');
       this.isLoading = false;
+      this.dialogRef.close();
     });
   }
 }
