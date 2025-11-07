@@ -1,10 +1,12 @@
-
+@if (isLoading) {
+  <mat-progress-bar class="dialog-progress-bar" mode="indeterminate"></mat-progress-bar>
+}
 <div class="dialog-add-user">
 <h2 mat-dialog-title>Add User</h2>
 <div>
 <mat-form-field class="mr-16" appearance="outline">
   <mat-label>First Name</mat-label>
-  <input matInput [(ngModel)]="user.firstName" placeholder="firstname">
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.firstName" placeholder="firstname">
 </mat-form-field>
 
 <mat-form-field appearance="outline">
@@ -16,7 +18,7 @@
 <div>
 <mat-form-field class="full-width" appearance="outline">
   <mat-label>Birth Date</mat-label>
-  <input matInput [matDatepicker]="picker1" [(ngModel)]="birthDate" placeholder="Choose a date">
+  <input [disabled]="isLoading" matInput [matDatepicker]="picker1" [(ngModel)]="birthDate" placeholder="Choose a date">
   <mat-datepicker #picker1></mat-datepicker>
 </mat-form-field>
 </div>
@@ -24,17 +26,17 @@
 <div>
     <mat-form-field class="mr-16" appearance="outline">
   <mat-label>Zip code</mat-label>
-  <input matInput [(ngModel)]="user.zipCode" placeholder="zip code">
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.zipCode" placeholder="zip code">
 </mat-form-field>
 
 <mat-form-field appearance="outline">
   <mat-label>City</mat-label>
-  <input matInput [(ngModel)]="user.city" placeholder="city">
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.city" placeholder="city">
 </mat-form-field>
 </div>
 
 <div mat-dialog-actions>
-  <button  matButton="outlined" >Cancel</button>
-  <button (click)="saveUser()" matButton="outlined">Save</button>
+  <button [disabled]="isLoading" matButton="outlined">Cancel</button>
+  <button [disabled]="isLoading" (click)="saveUser()" matButton="outlined">Save</button>
 </div>
 </div>

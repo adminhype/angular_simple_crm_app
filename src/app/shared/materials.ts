@@ -9,6 +9,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 export const MATERIAL_IMPORTS = [
@@ -22,5 +23,6 @@ export const MATERIAL_IMPORTS = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule,
+  MatProgressBarModule
 ];

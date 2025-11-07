@@ -14,13 +14,16 @@ import { FirebaseService } from '../services/firebase.service';
 export class DialogAddUser {
   user = new UserClass();
   birthDate!: Date;
+  isLoading = false;
 
   constructor(private firebaseService: FirebaseService) {}
 
   saveUser() {
     this.user.birthDate = this.birthDate.getTime();
+    this.isLoading = true;
     this.firebaseService.addUser(this.user.toJson()).then(() => {
       console.log('User added successfully');
+      this.isLoading = false;
     });
   }
 }
