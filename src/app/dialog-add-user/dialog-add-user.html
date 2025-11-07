@@ -17,6 +17,14 @@
 
 <div>
 <mat-form-field class="full-width" appearance="outline">
+  <mat-label>Email</mat-label>
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.email" placeholder="email">
+</mat-form-field>
+</div>
+
+
+<div>
+<mat-form-field class="full-width" appearance="outline">
   <mat-label>Birth Date</mat-label>
   <input [disabled]="isLoading" matInput [matDatepicker]="picker1" [(ngModel)]="birthDate" placeholder="Choose a date">
   <mat-datepicker #picker1></mat-datepicker>
@@ -36,7 +44,7 @@
 </div>
 
 <div mat-dialog-actions>
-  <button [disabled]="isLoading" matButton="outlined">Cancel</button>
+  <button [disabled]="isLoading" (click)="dialogRef.close()" matButton="outlined">Cancel</button>
   <button [disabled]="isLoading" (click)="saveUser()" matButton="outlined">Save</button>
 </div>
 </div>

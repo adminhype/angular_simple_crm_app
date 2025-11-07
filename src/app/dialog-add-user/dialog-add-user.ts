@@ -27,5 +27,6 @@ export class DialogAddUser {
       this.isLoading = false;
       this.dialogRef.close();
     });
+
   }
 }
