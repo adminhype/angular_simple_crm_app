@@ -23,3 +23,19 @@ body {
 .full-width {
   width: 100%;
 }
+
+.dialog-progress-bar {
+  color: #1976d2;
+}
+
+.dialog-add-user {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  input {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+}

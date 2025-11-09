@@ -41,6 +41,7 @@ export class UserDetail {
     this.dialog.open(DialogEditAddress);
   }
   editMenu() {
-    this.dialog.open(DialogEditAddress);
+    const dialogRef = this.dialog.open(DialogEditAddress);
+    dialogRef.componentInstance.user = this.user;
   }
 }

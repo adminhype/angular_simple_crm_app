@@ -1,1 +1,27 @@
-<p>dialog-edit-address works!</p>
+@if (isLoading) {
+  <mat-progress-bar class="dialog-progress-bar" mode="indeterminate"></mat-progress-bar>
+}
+<div class="dialog-add-user">
+<h2 mat-dialog-title>Edit Address</h2>
+
+<div>
+    <mat-form-field class="mr-16" appearance="outline">
+  <mat-label>Street</mat-label>
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.street" placeholder="street">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>City</mat-label>
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.city" placeholder="city">
+</mat-form-field>
+<div>
+  <mat-form-field appearance="outline">
+  <mat-label>zipCode</mat-label>
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.zipCode" placeholder="zip code">
+</mat-form-field>
+
+<div mat-dialog-actions>
+  <button [disabled]="isLoading" (click)="dialogRef.close()" matButton="outlined">Cancel</button>
+  <button [disabled]="isLoading" (click)="saveAddress()" matButton="outlined">Save</button>
+</div>
+</div>
