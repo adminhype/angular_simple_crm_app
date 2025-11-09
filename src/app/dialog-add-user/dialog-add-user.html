@@ -33,14 +33,22 @@
 
 <div>
     <mat-form-field class="mr-16" appearance="outline">
-  <mat-label>Zip code</mat-label>
-  <input [disabled]="isLoading" matInput [(ngModel)]="user.zipCode" placeholder="zip code">
+  <mat-label>Street</mat-label>
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.street" placeholder="street">
 </mat-form-field>
 
 <mat-form-field appearance="outline">
   <mat-label>City</mat-label>
   <input [disabled]="isLoading" matInput [(ngModel)]="user.city" placeholder="city">
 </mat-form-field>
+<div>
+  <mat-form-field appearance="outline">
+  <mat-label>zipCode</mat-label>
+  <input [disabled]="isLoading" matInput [(ngModel)]="user.zipCode" placeholder="zip code">
+</mat-form-field>
+</div>
+
+
 </div>
 
 <div mat-dialog-actions>

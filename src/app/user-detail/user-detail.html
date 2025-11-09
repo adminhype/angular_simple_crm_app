@@ -2,14 +2,14 @@
     <div class="user">
     <img src="./images/icons/user-icon.png" alt="profile picture" />
     <div class="user-details">
-        <h2>User Name</h2>
-        <p>User Email</p>
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <p>{{ user.email }}</p>
     </div>
     </div>
 </mat-card>
 <mat-card class="mt-32 p-16 border">
         <mat-card-title>Adress</mat-card-title>
     <mat-card-content>
-        <p>123 Main St,<br> Springfield,<br> USA</p>
+        <p> {{ user.street }}<br> {{ user.city }}<br> {{ user.zipCode }}</p>
     </mat-card-content>
 </mat-card>
