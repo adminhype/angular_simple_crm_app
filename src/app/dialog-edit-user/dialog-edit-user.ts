@@ -3,6 +3,7 @@ import { MATERIAL_IMPORTS } from '../shared/materials';
 import { FormsModule } from '@angular/forms';
 import { UserClass } from '../models/user.class';
 import {MatDialogRef} from '@angular/material/dialog';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-dialog-edit-user',
@@ -13,13 +14,16 @@ import {MatDialogRef} from '@angular/material/dialog';
 export class DialogEditUser {
   user!: UserClass;
   isLoading = false;
-  constructor(public dialogRef: MatDialogRef<DialogEditUser>) {
+  userID!: string;
+  constructor(private firebaseService: FirebaseService, public dialogRef: MatDialogRef<DialogEditUser>) {
   }
 
   saveUser() {
     this.isLoading = true;
-    console.log('User updated:', this.user);
-    this.isLoading = false;
-    this.dialogRef.close();
-  }
+    this.firebaseService.updateUser(this.userID, this.user.toJson()).then(() => {
+      console.log('User updated successfully');
+      this.isLoading = false;
+      this.dialogRef.close();
+    });
+  } 
 }

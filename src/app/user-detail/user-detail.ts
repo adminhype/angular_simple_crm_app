@@ -40,10 +40,12 @@ export class UserDetail {
 
   editUserDetails() {
     const dialogRef = this.dialog.open(DialogEditUser);
-    dialogRef.componentInstance.user = this.user;
+    dialogRef.componentInstance.user = new UserClass(this.user.toJson());
+    dialogRef.componentInstance.userID = this.userID;
   }
   editMenu() {
     const dialogRef = this.dialog.open(DialogEditAddress);
-    dialogRef.componentInstance.user = this.user;
+    dialogRef.componentInstance.user = new UserClass(this.user.toJson());
+    dialogRef.componentInstance.userID = this.userID;
   }
 }

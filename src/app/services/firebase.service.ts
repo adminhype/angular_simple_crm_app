@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, doc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 
@@ -15,5 +15,9 @@ export class FirebaseService {
   addUser(user: any) {
     const usersRef = collection(this.firestore, 'users');
     return addDoc(usersRef, user);
+  }
+  updateUser(userId: string, userData: any) {
+    const userRef = doc(this.firestore, 'users', userId);
+    return updateDoc(userRef, userData);
   }
 }

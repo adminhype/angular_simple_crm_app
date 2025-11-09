@@ -3,6 +3,7 @@ import { MATERIAL_IMPORTS } from '../shared/materials';
 import { FormsModule } from '@angular/forms';
 import { UserClass } from '../models/user.class';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FirebaseService } from '../services/firebase.service';
 
 
 @Component({
@@ -14,14 +15,17 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class DialogEditAddress {
   user!: UserClass;
   isLoading = false;
+  userID!: string;
 
-  constructor(public dialogRef: MatDialogRef<DialogEditAddress>) {
+  constructor(private firebaseService: FirebaseService, public dialogRef: MatDialogRef<DialogEditAddress>) {
   }
 
   saveAddress() {
     this.isLoading = true;
-    console.log('Address updated:', this.user);
-    this.isLoading = false;
-    this.dialogRef.close();
+    this.firebaseService.updateUser(this.userID, this.user.toJson()).then(() => {
+      console.log('Address updated successfully');
+      this.isLoading = false;
+      this.dialogRef.close();
+    });
   }
 }
