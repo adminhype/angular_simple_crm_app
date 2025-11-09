@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 import { RouterLink } from '@angular/router';
+import {MatMenuModule} from '@angular/material/menu'; 
 
 
 
@@ -29,5 +30,6 @@ export const MATERIAL_IMPORTS = [
   MatSelectModule,
   MatProgressBarModule,
   MatCardModule,
-  RouterLink
+  RouterLink,
+  MatMenuModule
 ];

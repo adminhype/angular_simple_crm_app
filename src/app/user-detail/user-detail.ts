@@ -3,6 +3,8 @@ import { MATERIAL_IMPORTS } from '../shared/materials';
 import { ActivatedRoute } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
 import { UserClass } from '../models/user.class';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogEditAddress } from '../dialog-edit-address/dialog-edit-address';
 
 @Component({
   selector: 'app-user-detail',
@@ -14,7 +16,10 @@ export class UserDetail {
   userID = '';
   user: UserClass = new UserClass();
 
-  constructor(private route: ActivatedRoute, private firebaseService: FirebaseService) {
+  constructor(
+    private route: ActivatedRoute, 
+    private firebaseService: FirebaseService,
+    public dialog: MatDialog) {
     this.onInit();
 
   }
@@ -31,4 +36,11 @@ export class UserDetail {
       console.log("User details from Firestore", this.user instanceof UserClass);
     });
 }
+
+  editUserDetails() {
+    this.dialog.open(DialogEditAddress);
+  }
+  editMenu() {
+    this.dialog.open(DialogEditAddress);
+  }
 }
