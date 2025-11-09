@@ -5,6 +5,7 @@ import { FirebaseService } from '../services/firebase.service';
 import { UserClass } from '../models/user.class';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogEditAddress } from '../dialog-edit-address/dialog-edit-address';
+import { DialogEditUser } from '../dialog-edit-user/dialog-edit-user';
 
 @Component({
   selector: 'app-user-detail',
@@ -38,7 +39,8 @@ export class UserDetail {
 }
 
   editUserDetails() {
-    this.dialog.open(DialogEditAddress);
+    const dialogRef = this.dialog.open(DialogEditUser);
+    dialogRef.componentInstance.user = this.user;
   }
   editMenu() {
     const dialogRef = this.dialog.open(DialogEditAddress);
